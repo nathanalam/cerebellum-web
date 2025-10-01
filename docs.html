@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Cerebellum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a1a;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            position: relative;
+            background-color: #0a0a1a;
+            overflow: hidden;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-bg {
+            background-color: rgba(23, 23, 33, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #4f46e5;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.7);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .sidebar {
+            height: calc(100vh - 80px);
+            position: sticky;
+            top: 80px;
+        }
+        code {
+            background-color: rgba(30, 30, 40, 0.8);
+            padding: 0.2em 0.4em;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: rgba(30, 30, 40, 0.8);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-opacity-80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">Cerebellum</div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/models.html" class="text-gray-300 hover:text-white transition">Models</a>
+                    <a href="/for-developers.html" class="text-gray-300 hover:text-white transition">For Developers</a>
+                    <a href="/docs.html" class="text-white hover:text-white transition">Docs</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                     <a href="#" class="hidden sm:inline-block text-gray-300 hover:text-white transition">Sign In</a>
+                    <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition cta-button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col lg:flex-row">
+                <!-- Sidebar -->
+                <div class="w-full lg:w-1/4 lg:pr-10 mb-10 lg:mb-0">
+                    <div class="sidebar overflow-y-auto card-bg rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Documentation</h3>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-indigo-400 font-semibold mb-2">Getting Started</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#introduction" class="text-gray-300 hover:text-white block transition">Introduction</a></li>
+                                <li><a href="#quickstart" class="text-gray-300 hover:text-white block transition">Quick Start Guide</a></li>
+                                <li><a href="#installation" class="text-gray-300 hover:text-white block transition">Installation</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-indigo-400 font-semibold mb-2">Core Concepts</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#models" class="text-gray-300 hover:text-white block transition">World Models</a></li>
+                                <li><a href="#integration" class="text-gray-300 hover:text-white block transition">Integration</a></li>
+                                <li><a href="#api" class="text-gray-300 hover:text-white block transition">API Reference</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-indigo-400 font-semibold mb-2">Advanced Topics</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#customization" class="text-gray-300 hover:text-white block transition">Model Customization</a></li>
+                                <li><a href="#deployment" class="text-gray-300 hover:text-white block transition">Deployment</a></li>
+                                <li><a href="#optimization" class="text-gray-300 hover:text-white block transition">Performance Optimization</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-indigo-400 font-semibold mb-2">Resources</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#tutorials" class="text-gray-300 hover:text-white block transition">Tutorials</a></li>
+                                <li><a href="#examples" class="text-gray-300 hover:text-white block transition">Example Projects</a></li>
+                                <li><a href="#faq" class="text-gray-300 hover:text-white block transition">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="w-full lg:w-3/4">
+                    <!-- Introduction Section -->
+                    <section id="introduction" class="mb-16">
+                        <h1 class="text-4xl font-bold text-white mb-6">Cerebellum Documentation</h1>
+                        <p class="text-gray-300 text-lg mb-6">Welcome to the official Cerebellum documentation. This guide will help you understand how to use our platform to discover, integrate, and build robotic world models.</p>
+                        
+                        <div class="card-bg rounded-xl p-8 mb-8">
+                            <h2 class="text-2xl font-semibold text-white mb-4">What is Cerebellum?</h2>
+                            <p class="text-gray-300 mb-4">Cerebellum is the marketplace for open source robot developers to share, monetize, and distribute world models for any hardware. Our platform provides a standardized way to package, distribute, and integrate sophisticated AI models into robotics applications.</p>
+                            <p class="text-gray-300">World models allow robots to understand and predict their environment, enabling more intelligent behavior and decision-making. Cerebellum makes these models accessible to developers of all levels.</p>
+                        </div>
+                        
+                        <div class="bg-indigo-900 bg-opacity-20 border border-indigo-800 rounded-xl p-6">
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-indigo-400 mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="text-gray-300">This documentation assumes basic familiarity with robotics concepts and programming. If you're new to these topics, we recommend starting with our <a href="#" class="text-indigo-400 hover:text-indigo-300 underline">beginners tutorials</a>.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Quick Start Section -->
+                    <section id="quickstart" class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-6">Quick Start Guide</h2>
+                        
+                        <div class="card-bg rounded-xl overflow-hidden mb-8">
+                            <div class="border-b border-gray-700 p-4">
+                                <h3 class="text-lg font-medium text-white">1. Install the Cerebellum SDK</h3>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">Install our SDK using pip:</p>
+                                <pre class="text-sm text-gray-300 mb-4">pip install cerebellum-sdk</pre>
+                            </div>
+                        </div>
+                        
+                        <div class="card-bg rounded-xl overflow-hidden mb-8">
+                            <div class="border-b border-gray-700 p-4">
+                                <h3 class="text-lg font-medium text-white">2. Initialize with your API key</h3>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">Authenticate with your API key:</p>
+                                <pre class="text-sm text-gray-300 mb-4">import cerebellum
+
+cerebellum.init(api_key="your_api_key_here")</pre>
+                            </div>
+                        </div>
+                        
+                        <div class="card-bg rounded-xl overflow-hidden mb-8">
+                            <div class="border-b border-gray-700 p-4">
+                                <h3 class="text-lg font-medium text-white">3. Load a model and make predictions</h3>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">Load a model and use it to make predictions:</p>
+                                <pre class="text-sm text-gray-300 mb-4">import cerebellum
+import numpy as np
+
+# Initialize with your API key
+cerebellum.init(api_key="your_api_key_here")
+
+# Load a world model
+model = cerebellum.load("domestic-navigator")
+
+# Create sample sensor data
+sensor_data = {
+    "lidar": np.random.rand(360) * 5,  # 360° lidar scan with 5m max range
+    "position": [0, 0],
+    "orientation": 0
+}
+
+# Get predictions
+prediction = model.predict(sensor_data)
+print(prediction)</pre>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-900 bg-opacity-20 border border-green-800 rounded-xl p-6">
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-green-400 mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="text-gray-300">Congratulations! You've successfully loaded a Cerebellum world model and made your first prediction. The prediction result contains environment understanding and recommended actions for your robot.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Installation Section -->
+                    <section id="installation" class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-6">Installation</h2>
+                        
+                        <div class="card-bg rounded-xl p-8 mb-8">
+                            <h3 class="text-xl font-semibold text-white mb-4">System Requirements</h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                                <li>Python 3.7 or higher</li>
+                                <li>Linux, macOS, or Windows operating system</li>
+                                <li>Internet connection for model downloads and API access</li>
+                                <li>GPU recommended for real-time inference (CUDA compatible)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card-bg rounded-xl p-8">
+                            <h3 class="text-xl font-semibold text-white mb-4">Installation Methods</h3>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-lg font-medium text-white mb-2">Using pip (Recommended)</h4>
+                                <pre class="text-sm text-gray-300 mb-4">pip install cerebellum-sdk</pre>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-lg font-medium text-white mb-2">Using conda</h4>
+                                <pre class="text-sm text-gray-300 mb-4">conda install -c cerebellum cerebellum-sdk</pre>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-medium text-white mb-2">From source</h4>
+                                <pre class="text-sm text-gray-300 mb-4">git clone https://github.com/cerebellum/cerebellum-sdk.git
+cd cerebellum-sdk
+pip install -e .</pre>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="text-center">
+                        <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition cta-button">View Full Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">&copy; 2024 Cerebellum, Inc. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

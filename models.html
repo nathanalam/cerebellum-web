@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models - Cerebellum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a1a;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            position: relative;
+            background-color: #0a0a1a;
+            overflow: hidden;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-bg {
+            background-color: rgba(23, 23, 33, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #4f46e5;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.7);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-opacity-80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">Cerebellum</div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/models.html" class="text-white hover:text-white transition">Models</a>
+                    <a href="/for-developers.html" class="text-gray-300 hover:text-white transition">For Developers</a>
+                    <a href="/docs.html" class="text-gray-300 hover:text-white transition">Docs</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                     <a href="#" class="hidden sm:inline-block text-gray-300 hover:text-white transition">Sign In</a>
+                    <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition cta-button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Models Hero Section -->
+        <section class="hero-bg pt-32 pb-20 text-center">
+            <div class="content-wrapper container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">Explore World Models</h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">Browse our catalog of high-quality, tested world models for various robot applications.</p>
+                <div class="max-w-xl mx-auto">
+                    <div class="relative">
+                        <input type="text" placeholder="Search models..." class="w-full py-4 px-6 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-white mb-6">Categories</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="card-bg p-4 rounded-xl text-center hover:bg-gray-800 cursor-pointer">
+                        <div class="p-3 bg-indigo-500 bg-opacity-20 rounded-full inline-flex justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium">Home</span>
+                    </div>
+                    <div class="card-bg p-4 rounded-xl text-center hover:bg-gray-800 cursor-pointer">
+                        <div class="p-3 bg-purple-500 bg-opacity-20 rounded-full inline-flex justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium">Industrial</span>
+                    </div>
+                    <div class="card-bg p-4 rounded-xl text-center hover:bg-gray-800 cursor-pointer">
+                        <div class="p-3 bg-green-500 bg-opacity-20 rounded-full inline-flex justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium">Agriculture</span>
+                    </div>
+                    <div class="card-bg p-4 rounded-xl text-center hover:bg-gray-800 cursor-pointer">
+                        <div class="p-3 bg-blue-500 bg-opacity-20 rounded-full inline-flex justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium">Vision</span>
+                    </div>
+                    <div class="card-bg p-4 rounded-xl text-center hover:bg-gray-800 cursor-pointer">
+                        <div class="p-3 bg-red-500 bg-opacity-20 rounded-full inline-flex justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium">Navigation</span>
+                    </div>
+                    <div class="card-bg p-4 rounded-xl text-center hover:bg-gray-800 cursor-pointer">
+                        <div class="p-3 bg-yellow-500 bg-opacity-20 rounded-full inline-flex justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium">Manipulation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Models Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-white">Featured Models</h2>
+                    <div class="flex space-x-2">
+                        <select class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-700">
+                            <option>Sort By</option>
+                            <option>Most Popular</option>
+                            <option>Newest</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Model Card 1 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-indigo-500/30">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Domestic Navigator Pro</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Advanced spatial awareness model for home robotics. Optimized for complex floor plans and object avoidance.</p>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">by @robogenius</span>
+                                <span class="text-green-400 font-semibold">$99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Model Card 2 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-indigo-500/30">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Warehouse Logistics AI</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">A comprehensive model for autonomous warehouse management, including palletizing and route optimization.</p>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">by @automata_dev</span>
+                                <span class="text-blue-400 font-semibold">Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Model Card 3 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-indigo-500/30">
+                        <div class="p-6">
+                           <div class="flex items-center mb-4">
+                                <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M14.5 16.5L18 20l-3.5 3.5"></path><path d="M9.5 7.5L6 4 2.5 7.5"></path><path d="M20 18c-3.3 0-6-2.7-6-6s2.7-6 6-6"></path><path d="M4 6c3.3 0 6 2.7 6 6s-2.7 6-6 6"></path></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Agri-Drone Vision</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Crop health and pest detection model for agricultural drones. Supports multispectral camera inputs.</p>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">by @farmbots</span>
+                                <span class="text-green-400 font-semibold">$249</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Model Card 4 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-indigo-500/30">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Urban Explorer</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">City navigation model with advanced pedestrian detection and traffic pattern prediction for autonomous vehicles.</p>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">by @citytechai</span>
+                                <span class="text-green-400 font-semibold">$179</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Model Card 5 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-indigo-500/30">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Tactile Grasping</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Precision object manipulation model with force feedback for robotic arms in manufacturing and assembly.</p>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">by @griptech</span>
+                                <span class="text-green-400 font-semibold">$349</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Model Card 6 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-indigo-500/30">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Energy Grid Scout</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Utility inspection model for drones to detect and classify faults in electrical infrastructure and solar arrays.</p>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">by @powerai</span>
+                                <span class="text-blue-400 font-semibold">Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10">
+                    <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition cta-button">Load More</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">&copy; 2024 Cerebellum, Inc. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
